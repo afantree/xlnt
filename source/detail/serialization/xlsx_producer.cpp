@@ -2261,6 +2261,8 @@ void xlsx_producer::write_worksheet(const relationship &rel)
             case cell::type::formula_string:
                 write_attribute("t", "str");
                 break;
+            case cell::type::empty:
+                break;
             }
 
             //write_attribute("cm", "");
@@ -2319,6 +2321,8 @@ void xlsx_producer::write_worksheet(const relationship &rel)
 
             case cell::type::formula_string:
                 write_element(xmlns, "v", cell.value<std::string>());
+                break;
+            case cell::type::empty:
                 break;
             }
 

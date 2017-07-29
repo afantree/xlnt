@@ -674,6 +674,7 @@ std::string cell::to_string() const
     case cell::type::inline_string:
     case cell::type::shared_string:
     case cell::type::formula_string:
+    case cell::type::date:
     case cell::type::error:
         return nf.format(value<std::string>());
     case cell::type::boolean:
